@@ -1,0 +1,177 @@
+1. Element is anything you can display on webpage 
+2. HTML tag -- tells computer what we want to create
+3. HTML attribute --> modifies how element behaves
+
+##css
+
+1. css is similar to html
+2. syntax rules for css
+   1. css selector (which elements we are targeting) i.e. all buttons
+   2. css property (what we are changing)
+   3. css value (what we are changing the property to)
+3. create button with html and change properties with css
+   1. set class attribute, set label to css
+   2. if you start a label with dot, then you create a class name
+
+Strategy
+- create element with html
+- style it one by one till you match design
+
+Hover
+- create a new block of css
+- :hover -- whatever happens inside the new block
+  - known as pseudo class
+
+Dev Tools
+- right click on page and inspect
+- use pointer icon to target and show any element
+  - look at styles from that
+- color will be hex so you can convert hex to rgb in a calculator
+- computed
+  - shows all final styles applied -- you can find height and width 
+
+CSS Box Model
+- margin --> top right bottom and left
+- dont set height and width because your text can end up longer, instead delete it and: 
+  - add spacing on the inside of the button -- called padding 
+
+
+Styling text
+- html entity "middle dot"
+- selector that is more specific will have higher priority
+  - i.e .video-title will have higher priority than p
+- padding -- spacing isnide element
+- text element, element inside the line of text
+  - you can use span element to customize your style within text
+- achieve multiple spaces to left/right -- margin left
+
+HTML structure
+- follow doctype, html, head, body
+- body element has stuff that is visible on the page
+- inside head element, there are things not visible on page
+  - First website i.e. for title tag
+  - put all style in head
+- put all css in different file
+  - link element --void elements which means elements that don't need a closing tag
+    - if file is in another folder, give name of folder styles/buttons.css (file paths)
+- fonts
+  - go to google fonts and copy whichever you want
+
+Images and Text Boxes
+- image element is a void element, doesn't require closing tab
+- style elements in head
+- if you change width, then height -- image loses it's shape
+  - to resolve this, use object-fit: cover; -- but some parts of the image bay be hidden
+  - to resolve this use object-position: left, contain, right
+
+Search Box
+- use void element <input>
+  - set type = text or checkbox, etc
+  - enter a placeholder
+
+CSS Display Property
+- create three paragraphs for texts
+- three types of elements
+  - 1st type of element is block element that takes up an entire line i.e. paragraph
+  - 2nd type is inline block element -- as much space as it needs to
+    - image element and input element
+  - 3rd type is inline element
+    - text elements like <strong>, where you could customize within the element
+- we could use display to change from block to inline block
+- CSS styling note
+  - you can use a comma after the style .video-author,.video-stats -- dry up code
+
+Div element (html)
+- stands for division: just a box
+  - by default a block element
+  - it can contain any other elements inside -- paragraph, images, ---> meant to be containers
+  - block elements take over entire line in their own container
+    - so lets change display to an inline block
+- aligning two divs
+
+Nested Layout Technique
+- two types of layouts
+  - vertical layout
+  - horizontal layout
+- using a combination -- you can create anything you see
+- create a screenshot, and upload into an image editing software
+  - try google drawings and practice by putting images in there and using the rectangle shape to create horizontal and vertical layouts
+- now create two horizontal layouts -- yu want to make both inline block elements (as much space as it needs), it can be beside eachother (for channel pic)
+- create a div class for both channel pic and video info, and like before, make sure width is like 50px
+  - its overlapping now so remove video title width which forces it to overlap so now the paragraph will tae up the container
+  - image overflow solution: create class and use css and resize to 50px
+    - actually, change to 100% so it takes up the space that is relative to the container
+  - now vertical-align the channel picture at the top
+    - the profile picture is the actual picture and the channel picture is the div container
+- get rid of margin above "talking tech and ai"
+  - target video-title, and remove the top margin so it aligns with the channel picture
+- style elements one by one 
+  - profile pic is round --> border-radius: ;
+  - update div class to for the row the thumbnail is in
+    - create margin of like 12 px
+  - now find roboto font and copy code, then add to head
+    - in styles, change font family to roboto --> use p {}, then ad backup font of arial (if google cant load)
+- change size of font
+  - you can change font weight bold to font-weight 500, or whatever is the best
+
+CSS Grid
+- better way to create horizontal layouts
+  - we first used display: inline blocks;
+  - inline block has alignment problems
+- create perfectly aligned horizontal layouts
+- in div tag you can use inline styles
+  - set style background to grid and grid template columns to however many pixels
+- There's no extra space in these two unlike display inline block
+  - when we add more elements to grid, it stays vertically aligned
+- 1fr takes up the remaining amount of space
+  - use it multiple times, if you keep 1 -- they get equal amount of remaining space
+- in channel-picture you can remove all the inline block, and width because you're now using a grid
+- Build bigger grid
+
+Flexbox
+- another way to create layouts
+- use with header
+- best to use when we want to use flexible layout dependalble on our content
+  - when we sign out it may look different
+
+CSS position
+- adds layers to the page -- notification and the 1 or however many number on it
+- header stays on the screen -- search box
+
+Position absolute
+- it allows us to put pictures in the corner like notification number
+- position absolute is nested under position relative
+  - i.e. thumbnail is relative and the time is absolute
+
+- You need to to set a z-index for the header to appear above the thumbnails
+
+Final
+- css selector -- you can combine selectors together
+  - .side-bar-link, 
+  - .header (add another)
+  - or .side-bar-link image (note the space, then you target all images within the sidebar link)
+
+Responsive design
+- only have two videos when screen size is small
+- use @media --> then set pixels
+- if you have all four same values for padding, you can use just padding and have two values, value one would be horizontal and padding two would be vertical
+
+Inheritance
+- css specificity -- if a style is more specific it has more priority than a general style
+
+Semantic elements
+- header and nav are semantic elements too
+- change div from sidebar to nav element
+- they are just like divs but better for robots
+
+how to write comments
+- for reminder
+- for html <!-- -->
+- css --> /* this is a comment*/
+
+Techniques learned
+1. Nested Layouts Technique
+2. Display: block / inline block;
+3. Grid
+4. Flexbox
+5. Position
